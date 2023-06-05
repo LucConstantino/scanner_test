@@ -11,7 +11,7 @@ class ButtonComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        function;
+        function();
       },
       child: Text(buttonName),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scanner_bar/components/buttons.dart';
+import 'package:scanner_bar/pages/qrcodeScanner.dart';
 
 class VisualButtons extends StatelessWidget {
   const VisualButtons({Key? key}) : super(key: key);
@@ -17,7 +18,15 @@ class VisualButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ButtonComponent(buttonName: 'QR Code', function: () {}),
+            ButtonComponent(
+                buttonName: 'QR Code',
+                function: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QRCodeScannerScreen()),
+                  );
+                }),
             ButtonComponent(buttonName: 'Barcode', function: () {}),
             ButtonComponent(buttonName: 'Photo', function: () {})
           ],
