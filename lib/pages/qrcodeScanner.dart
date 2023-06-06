@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class QRCodeScannerScreen extends StatefulWidget {
   @override
@@ -7,6 +8,15 @@ class QRCodeScannerScreen extends StatefulWidget {
 
 class _QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
   String ticket = '';
+
+  readQrCode() async {
+    String code = await FlutterBarcodeScanner.scanBarcode(
+        "#FFFFFF", "Cancel", false, ScanMode.QR);
+
+    setState(() {
+      ticket = code != '-1' ? code : 'Not Validated';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +36,7 @@ class _QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
                 ),
               ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: readQrCode,
               icon: Icon(Icons.qr_code_outlined),
               label: Text('Validate'),
             )
