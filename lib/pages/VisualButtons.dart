@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scanner_bar/components/buttons.dart';
+import 'package:scanner_bar/pages/barcodeScanner.dart';
 import 'package:scanner_bar/pages/qrcodeScanner.dart';
 
 class VisualButtons extends StatelessWidget {
@@ -27,7 +28,15 @@ class VisualButtons extends StatelessWidget {
                         builder: (context) => QRCodeScannerScreen()),
                   );
                 }),
-            ButtonComponent(buttonName: 'Barcode', function: () {}),
+            ButtonComponent(
+                buttonName: 'Barcode',
+                function: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BarcodeScannerScreen()),
+                  );
+                }),
             ButtonComponent(buttonName: 'Photo', function: () {})
           ],
         ),
