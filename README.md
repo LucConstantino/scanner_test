@@ -2,15 +2,10 @@
 
 A scanner bar test with Flutter. Barcode and QRCode Reader.
 
-## Getting Started
+## App
 
-This project is a starting point for a Flutter application.
+Simple Flutter Program to Test QR Code and Barcode Reading, Camera Functionality for Taking Photos, and Loading Them into the Application.
 
-A few resources to get you started if this is your first Flutter project:
+The layout contains three buttons, each of which is used to validate one of the options to be tested.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The code readers validate the output that each one will provide, which can be a generated code for testing or even a banking code. The output will be displayed on the screen after reading, like a "ticket".
